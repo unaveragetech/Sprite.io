@@ -1,0 +1,1 @@
+Manages the sprite's memory, storing experiences and data.
