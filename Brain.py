@@ -1,5 +1,6 @@
 import queue
 import asyncio
+import random
 
 class Brain:
     def __init__(self):
@@ -20,6 +21,7 @@ class Brain:
             "satisfaction": 0
             # ... [Other emotions]
         }
+        self.experiences = []
 
     async def process_tasks(self):
         while True:
@@ -44,15 +46,13 @@ class Brain:
     def prioritize_task(self, task):
         """Prioritize a task based on its alignment with the ambition-driven goal."""
         goal = self.determine_goal()
+        # Logic to prioritize tasks
         if goal == "Pursue challenging, long-term goals":
-            # Logic to prioritize challenging tasks
-            pass
+            return 1  # High priority
         elif goal == "Seek new knowledge and moderate challenges":
-            # Logic to prioritize learning tasks
-            pass
+            return 2  # Medium priority
         else:
-            # Logic to prioritize easy, immediate tasks
-            pass
+            return 3  # Low priority
 
     def adapt_trait(self, trait_name, change):
         """Adapt a trait based on experiences."""
@@ -73,5 +73,31 @@ class Brain:
             return "Seek new strategies or information"
         # ... [Other behavior determinations]
 
-    # ... [Other methods wp and needed for future implementations]
+    def log_experience(self, experience):
+        """Log experiences for future reflections."""
+        self.experiences.append(experience)
+        self.reflect_on_experience(experience)
+
+    def reflect_on_experience(self, experience):
+        """Reflect on a particular experience to adapt traits and emotions."""
+        # Logic to adapt traits based on the experience
+        # For example, if the experience is a failure:
+        if experience == "failure":
+            self.adapt_trait("caution", 0.1)
+            self.emotions["frustration"] += 0.1
+
+    def goal_achieved_recently(self):
+        """Check if a goal has been achieved recently."""
+        return "success" in self.experiences[-10:]
+
+    def decide_next_action(self):
+        """Decide the next action based on current state, traits, and emotions."""
+        if self.traits["curiosity"] > 0.7:
+            return "explore"
+        elif self.emotions["frustration"] > 0.7:
+            return "retry_failed_task"
+        else:
+            return random.choice(["explore", "learn", "interact"])
+
+    # ... [Other methods for handling events, multitasking, learning, etc.]
 
