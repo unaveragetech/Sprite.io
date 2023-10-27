@@ -1,0 +1,1 @@
+Manages configuration settings and preferences for the sprite
