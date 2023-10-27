@@ -20,6 +20,26 @@ class Sprite:
         self.body_parts = self.initialize_body_parts()
         self.brain = Brain()
 
+     def detect_stimulus(self, stimulus):
+        """Detect a stimulus and act accordingly."""
+        # Immediate Reflex Response
+        reflex_action = self.brain.reflex_response(stimulus)
+        if reflex_action:
+            self.execute_immediate_action(reflex_action)
+
+        # Further Processing by Brain
+        subsequent_action = self.brain.process_stimulus(stimulus)
+        if subsequent_action:
+            self.execute_subsequent_action(subsequent_action)
+
+    def execute_immediate_action(self, action):
+        """Execute an immediate reflex action."""
+        # Logic for executing the immediate action, which will be based on the action returned by the brain
+
+    def execute_subsequent_action(self, action):
+        """Execute a subsequent action based on brain's decision."""
+        # Logic for executing the subsequent action, which will be based on the action returned by the brain
+
     def set_identity(self):
         """Set sprite's identity and description."""
         return {
