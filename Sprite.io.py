@@ -56,16 +56,26 @@ class Sprite:
         self.state = new_state
         memory.log_action(self.memory, f"Changed state to {new_state}")
 
-    # Placeholder for methods that invoke functions from the imported modules.
-
-    # Methods to interact with the brain
-    def think(self, task):
-        """Ask the brain to process a task."""
-        self.brain.process_tasks(task)
+    def perform_task(self, task):
+        """Let the brain process a task."""
+        self.brain.think(task)
 
     def adapt_trait(self, trait, change):
         """Inform the brain to adapt a certain trait."""
         self.brain.adapt_trait(trait, change)
+
+    def experience_event(self, event):
+        """Log an event as an experience and let the brain reflect on it."""
+        self.brain.log_experience(event)
+
+    def decide_next_action(self):
+        """Ask the brain to decide the next action."""
+        return self.brain.decide_next_action()
+
+    def communicate(self, message):
+        """Interact with the environment or user."""
+        # Logic to display or communicate the message, possibly using the visuals module
+        visuals.display_message(message)
 
     # ... [Other methods to interact with the brain and other parts of the sprite]
 
