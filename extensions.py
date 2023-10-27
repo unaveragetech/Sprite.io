@@ -1,0 +1,1 @@
+Provides the framework for adding extensions or plugins to enhance the sprite's functionalities.
