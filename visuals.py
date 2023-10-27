@@ -1,0 +1,1 @@
+Handles the visual representation and animations of the sprite.
