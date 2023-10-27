@@ -50,5 +50,3 @@ sprite.io is an innovative beta software solution designed to test and construct
 - Evolutionary process is facilitated by their unique experiences and decisions from inception.
 
 ---
-
-This document captures the essence of our discussion on sprite.io. You can use this as a reference to guide the project's development and for onboarding other contributors or stakeholders.
