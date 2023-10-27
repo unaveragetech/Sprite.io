@@ -1,0 +1,1 @@
+Implements security measures and protocols for the sprite.
