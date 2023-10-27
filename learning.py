@@ -1,0 +1,1 @@
+Contains mechanisms for the sprite's learning and adaptation processes
