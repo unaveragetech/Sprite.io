@@ -1,0 +1,1 @@
+Manages the movement of the sprite within its environment.
